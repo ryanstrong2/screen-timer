@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class = "container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+
+    <div th:each="time : ${times}" class="radio">
+        <input type="radio" th:field="*{user.id}" />
+        <label subtract></label>
+        <br />
+    </div>
+    <!--<label th:for="${timeAmount.id}" th:thext="${timeAmount.name}"></label>-->
+    <label for="timeAmount">Time spent:</label>
+    <select>
+        <option>"${timeAmounts}"</option>
+    </select>
+
+    <input type="submit" value="Remove Cheese" />
+</form>"
+
+</body>
+</html>

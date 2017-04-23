@@ -1,6 +1,7 @@
 package org.ryanstrong.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -8,15 +9,14 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by ryanstrong on 4/22/17.
  */
-public class Timer {
-}
-
 @Entity
-public class Category {
-    //    Category newCat = new Category();
+public class Time {
+
+
     @Id
     @GeneratedValue  //annotations
     private int id; //field
@@ -27,8 +27,9 @@ public class Category {
 
 
     @OneToMany
-    @JoinColumn(name = "category_id")
-    private List<Cheese> cheeses = new ArrayList<>();
+    @JoinColumn(name = "time_id")
+    private List<User> users = new ArrayList<>();
+
 
     public int getId() {
         return id;
@@ -41,12 +42,12 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-    public List<Cheese> getCheeses() {
-        return cheeses;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setCheeses(List<Cheese> cheeses) {
-        this.cheeses = cheeses;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
 }
