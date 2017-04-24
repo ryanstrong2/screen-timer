@@ -11,7 +11,6 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -60,16 +59,16 @@ public class TimeController {
         model.addAttribute("times", timeDao.findAll());
         model.addAttribute("title", "Subtract Time");
         return "user/subtract";
-    @RequestMapping(value = "subtract", method = RequestMethod.POST)
-    public String processSubstractTimeForm(@RequestParam int[] timeIds){
-        for(int timeId : timeIds){
-            timeDao.exists(timeId);
-
-        }
-        return "redirect:";
+//    @RequestMapping(value = "subtract", method = RequestMethod.POST)
+//    public String processSubstractTimeForm(@RequestParam int[] timeIds){
+//        for(int timeId : timeIds){
+//            timeDao.exists(timeId);
+//
+//        }
+//        return "redirect:";
         }
 
     }
-}
+
 
 

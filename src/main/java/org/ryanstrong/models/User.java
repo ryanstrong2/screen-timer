@@ -4,24 +4,38 @@ package org.ryanstrong.models;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
 //import javax.persistence.OneToMany;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
  * Created by ryanstrong on 4/20/17.
  */
-//@Entity
+@Entity
 public class User {
     //    user newCat = new user();
-//    @Id
-//    @GeneratedValue  //annotations
+    @Id
+    @GeneratedValue  //annotations
     private int id; //field
 
     @NotNull
     @Size(min= 3, max=15)
     private String name; //property instance variable
 
+    @ManyToMany
+    private Time time;
 
+//    @ManyToMany(mappedBy = "users")
+//    private List<third> thirds;
+
+    public User(String name, String level){
+        this.name = name;
+//        this.level = level;
+    }
 //    @OneToMany
 //    @JoinColumn(name = "category_id")
 //    private List<user> users = new ArrayList<>();
