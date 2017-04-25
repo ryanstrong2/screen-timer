@@ -8,10 +8,12 @@
         <p>Manage time</p>
         <ul>
             <li th:each="action : ${actions}">
-                <a th:href="@{'/' + ${action.key}}" th:text="${action.value"}></a>
+                <!--<a th:href="@{'/' + ${action.key}}" th:text="${action.value"}></a>-->
             </li>
         </ul>
     </div>
+<a href="/time/add">Add Time</a>
+    <a href="/time/subtract">Subtract Time</a>
 
 </body>
 </html>

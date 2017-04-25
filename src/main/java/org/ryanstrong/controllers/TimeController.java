@@ -1,9 +1,7 @@
 package org.ryanstrong.controllers;
 
 import org.ryanstrong.models.Time;
-import org.ryanstrong.models.User;
 import org.ryanstrong.models.data.TimeDao;
-import org.ryanstrong.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
+
+//import org.ryanstrong.models.User;
+//import org.ryanstrong.models.data.UserDao;
 
 /**
  * Created by ryanstrong on 3/26/17.
@@ -23,8 +22,8 @@ import java.util.List;
 @RequestMapping("")
 public class TimeController {
 
-    @Autowired
-    private UserDao userDao;
+//    @Autowired
+//    private UserDao userDao;
     @Autowired
     private TimeDao timeDao;
 
@@ -36,7 +35,7 @@ public class TimeController {
     }
 //    @oneToMany
 //    @JoinColumn()
-    private List<User> users = new ArrayList<>();
+//    private List<User> users = new ArrayList<>();
 
     @RequestMapping(value="add", method =  RequestMethod.GET)
     public String add(Model model){

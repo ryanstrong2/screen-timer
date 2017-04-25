@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -27,7 +25,7 @@ public class Time {
 
 //    @OneToMany
 //    @JoinColumn(name = "time_id")
-    private List<User> users = new ArrayList<>();
+//    private List<User> users = new ArrayList<>();
 
 
     public int getId() {
@@ -41,12 +39,12 @@ public class Time {
     public void setName(String name) {
         this.name = name;
     }
-    public List<User> getUsers() {
-        return users;
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
-}
+//}
