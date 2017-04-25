@@ -60,7 +60,7 @@ public class TimeController {
         model.addAttribute("title", "Subtract Time");
         return "user/subtract";
 //    @RequestMapping(value = "subtract", method = RequestMethod.POST)
-//    public String processSubstractTimeForm(@RequestParam int[] timeIds){
+//    public String processSubtractTimeForm(@RequestParam int[] timeIds){
 //        for(int timeId : timeIds){
 //            timeDao.exists(timeId);
 //

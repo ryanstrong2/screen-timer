@@ -3,7 +3,6 @@ package org.ryanstrong.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -26,8 +25,8 @@ public class Time {
     private String name; //property instance variable
 
 
-    @OneToMany
-    @JoinColumn(name = "time_id")
+//    @OneToMany
+//    @JoinColumn(name = "time_id")
     private List<User> users = new ArrayList<>();
 
 

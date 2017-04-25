@@ -5,10 +5,11 @@ package org.ryanstrong.models;
 //import javax.persistence.Id;
 //import javax.persistence.OneToMany;
 
+import org.springframework.data.annotation.Persistent;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -17,6 +18,8 @@ import javax.validation.constraints.Size;
  */
 @Entity
 public class User {
+    @Persistent
+    private final String level;
     //    user newCat = new user();
     @Id
     @GeneratedValue  //annotations
@@ -26,7 +29,7 @@ public class User {
     @Size(min= 3, max=15)
     private String name; //property instance variable
 
-    @ManyToMany
+    @Persistent
     private Time time;
 
 //    @ManyToMany(mappedBy = "users")
@@ -34,7 +37,7 @@ public class User {
 
     public User(String name, String level){
         this.name = name;
-//        this.level = level;
+        this.level = level;
     }
 //    @OneToMany
 //    @JoinColumn(name = "category_id")

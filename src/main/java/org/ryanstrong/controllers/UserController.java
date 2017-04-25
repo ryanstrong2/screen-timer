@@ -1,6 +1,5 @@
 package org.ryanstrong.controllers;
 
-import org.ryanstrong.models.User;
 import org.ryanstrong.models.data.TimeDao;
 import org.ryanstrong.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class UserController {
     @RequestMapping (value ="add", method= RequestMethod.GET )
     public String display(Model model){
         model.addAttribute("userName", "Add user");
-        model.addAttribute(new User());
+//        model.addAttribute(new User());
         model.addAttribute("times", timeDao.findAll());
         return "user/add";
     }
