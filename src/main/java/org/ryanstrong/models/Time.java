@@ -23,11 +23,23 @@ public class Time {
     private String name; //property instance variable
 
 
+    private final long start;
+
+    public Time(long start) {
+        this.start = start;
+    }
+    public Time(){
+        start = System.currentTimeMillis();
+
+    }
+    public double timeSpent(){
+        long now=System.currentTimeMillis();
+        return (long) ((now-start)/1000.0);
+
+    }
 //    @OneToMany
 //    @JoinColumn(name = "time_id")
 //    private List<User> users = new ArrayList<>();
-
-
     public int getId() {
         return id;
     }
@@ -39,7 +51,10 @@ public class Time {
     public void setName(String name) {
         this.name = name;
     }
-//    public List<User> getUsers() {
+
+    public long getStart(){return start;}
+
+    //    public List<User> getUsers() {
 //        return users;
 //    }
 //
