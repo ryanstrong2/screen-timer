@@ -1,4 +1,4 @@
-package hello;
+package org.ryanstrong.models;
 
 //import java.time.LocalTime;
 import org.joda.time.LocalTime;
