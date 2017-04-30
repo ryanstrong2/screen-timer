@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments:: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+<nav th:replace="fragments :: navigation"></nav>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><lable> Confirm Password: <input type="passwordConfirm" name="passwordConfirm"/></lable></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+<a href="login">Login</a>
+
+</body>
+</html>

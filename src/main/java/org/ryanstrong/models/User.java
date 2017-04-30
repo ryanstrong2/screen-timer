@@ -5,13 +5,9 @@ package org.ryanstrong.models;
 //import javax.persistence.Id;
 //import javax.persistence.OneToMany;
 
-import org.springframework.data.annotation.Persistent;
-
 import javax.persistence.*;
-import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Set;
 
 /**
  * Created by ryanstrong on 4/20/17.
@@ -20,9 +16,8 @@ import java.util.Set;
 @Table
 public class User {
 
-    @Persistent
-    private Set<Role> roles;
-    //    user newCat = new user();
+//    @Persistent
+//    private Set<Role> roles;
     @Id
     @GeneratedValue
     private int id;
@@ -73,15 +68,15 @@ public class User {
     public void setPasswordConfirm(String passwordConfirm){
         this.passwordConfirm = passwordConfirm;
     }
-    @ManyToMany
-    @JoinTable(name="user_role", joinColumns = @JoinColumn(name="user_id"),
-                inverseJoinColumns = @JoinColumn(name="role_id"))
-    public Set<Role> getRoles(){
-        return roles;
-    }
-    public void setRoles(Set<Role> roles){
-        this.roles=roles;
-    }
+//    @ManyToMany
+//    @JoinTable(name="user_role", joinColumns = @JoinColumn(name="user_id"),
+//                inverseJoinColumns = @JoinColumn(name="role_id"))
+//    public Set<Role> getRoles(){
+//        return roles;
+//    }
+//    public void setRoles(Set<Role> roles){
+//        this.roles=roles;
+//    }
 
 
 

@@ -12,6 +12,8 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin:   'war'
+apply plugin:   'idea'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
@@ -24,10 +26,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 repositories {
 	mavenCentral()
+    maven { url "https://repo.spring.io/snapshot"}
+    maven { url "https://repo.spring.io/milestone"}
 }
 
 
 dependencies {
+
     compile('org.springframework.security:spring-security-web:4.2.3.BUILD-SNAPSHOT')
     compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
