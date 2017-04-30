@@ -7,12 +7,9 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 
 /**
- * Created by ryanstrong on 4/20/17.
+ * Created by ryanstrong on 4/30/17.
  */
 @Repository
 @Transactional
-public interface UserDao
-        extends CrudRepository<User, Integer>{
-//{User findByName(String name)
-
+public interface SignUpDao extends CrudRepository<User, Integer> {
 }
