@@ -8,12 +8,18 @@ import java.security.SecureRandom;
  * Created by ryanstrong on 4/27/17.
  */
 public class BCryptPasswordEncoder extends Object implements PasswordEncoder{
-    BCryptPasswordEncoder() {
+    private  int strength = 14;
+    private  SecureRandom random;
 
-    }
-    BCryptPasswordEncoder(int strength){
+    public BCryptPasswordEncoder(int strength){
     }
     BCryptPasswordEncoder(int strength, SecureRandom random){
+        this.strength = strength;
+        this.random = random;
+    }
+
+    public BCryptPasswordEncoder() {
+
     }
 
     @Override
@@ -25,5 +31,5 @@ public class BCryptPasswordEncoder extends Object implements PasswordEncoder{
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
         return false;
     }
-    public BCryptPasswordEncoder();
+
 }
