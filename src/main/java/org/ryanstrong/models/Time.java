@@ -24,8 +24,6 @@ public class Time {
     @NotNull
     @Size(min= 3, max=15)
     private String name; //property instance variable
-
-
     private final long start;
 
     public Time(long start) {
@@ -64,5 +62,5 @@ public class Time {
     public void setUsers(List<User> users) {
         this.users = users;
     }
-
+// todo add time daily
 }

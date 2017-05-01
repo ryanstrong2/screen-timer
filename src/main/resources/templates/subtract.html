@@ -7,23 +7,23 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<form method="post">
+<!--<form method="post">-->
 
-    <div th:each="time : ${times}" class="radio">
-        <input name= "subtract" type="radio" th:field="*{user.id}" />
-        <label th:for="subtract"></label>
+    <!--<div th:each="time : ${times}" class="radio">-->
+        <!--<input name= "subtract" type="radio" th:field="*{user.id}" />-->
+        <!--<label th:for="subtract"></label>-->
 
-        <br />
-    </div>
-    <!--<label th:for="${timeAmount.id}" th:thext="${timeAmount.name}"></label>-->
-    <!--<label for="timeAmount">Time spent:</label>-->
-    <select>
-        <option th:field="${timeAmounts}"></option>
-        // keep thyme leaf in
-    </select>
+        <!--<br />-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<label th:for="${timeAmount.id}" th:thext="${timeAmount.name}"></label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<label for="timeAmount">Time spent:</label>&ndash;&gt;-->
+    <!--<select>-->
+        <!--<option th:field="${timeAmounts}"></option>-->
+        <!--// keep thyme leaf in-->
+    <!--</select>-->
 
     <input type="submit" value="Subtract time" />
-</form>
+
 
 </body>
 </html>

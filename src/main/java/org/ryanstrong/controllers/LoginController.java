@@ -26,7 +26,7 @@
 //@Controller
 //public class LoginController {
 //    private RequestCache requestCache = new HttpSessionRequestCache();
-//    @RequestMapping("/authenticate")
+//    @RequestMapping("/authenticate")// todo make this a html file
 //    public String authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        boolean authenticate = request.authenticate(response);
 //        return authenticate ? "index" : null;
@@ -51,6 +51,8 @@
 //
 //    @RequestMapping(value = "/login", method = RequestMethod.GET)
 //    public String login(@ModelAttribute LoginForm loginForm) {
+// todo see if this works public String login(Model model)}
+//model.addAttribute("login", new Login());
 //        return "login";
 //    }
 //    @RequestMapping("/logout")
