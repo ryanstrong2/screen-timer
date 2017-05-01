@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +21,8 @@ public class Time {
     private int id; //field
 
     @NotNull
-    @Size(min= 3, max=15)
-    private String name; //property instance variable
+//    @Size(min= 1, max=2)
+    private int name; //property instance variable
     private final long start;
 
     public Time(long start) {
@@ -45,11 +44,11 @@ public class Time {
         return id;
     }
 
-    public String getName() {
+    public int getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(int name) {
         this.name = name;
     }
 
@@ -62,5 +61,10 @@ public class Time {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    public void addItem(User theUser) {
+    }
+
+
 // todo add time daily
 }

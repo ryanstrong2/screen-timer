@@ -16,7 +16,7 @@
         <td th:text="${user.time}"></td>
     </tr>
 </table>
-<form method="post" style="max-width:600px;" th:object="${time}">
+<form method="post" style="max-width:600px;" th:object="${histime}">
     <div class="form-group">
         <label th:for="name">Time Amount</label>
         <input class="form-control" th:field="*{name}" />
