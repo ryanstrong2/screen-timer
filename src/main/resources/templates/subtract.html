@@ -22,14 +22,14 @@
         <!--// keep thyme leaf in-->
     <!--</select>-->
 
-<form method="post" style="max-width:600px;" th:object="${form}" action="/menu/add-item">
+<form method="post" style="max-width:600px;" th:object="${form}" action="/subtract/add-item">
 
     <div class="form-group">
-        <select name="cheeseId">
-            <option th:each="cheese : *{cheeses}"
-                    th:text="${cheese.name}"
-                    th:value="${cheese.id}">
-                <span th:errors="*{cheeseId}" class="error"></span>
+        <select name="timeId">
+            <option th:each="time  : *{times}"
+                    th:text="${time.name}"
+                    th:value="${time.id}">
+                <span th:errors="*{timeId}" class="error"></span>
 
 
             </option>
@@ -39,6 +39,6 @@
 
     <input type="submit" value="Subtract time" />
 
-
+</form>
 </body>
 </html>

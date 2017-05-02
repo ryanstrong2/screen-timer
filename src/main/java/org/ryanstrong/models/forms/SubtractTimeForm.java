@@ -24,6 +24,11 @@ public class SubtractTimeForm {
     }
 
     public SubtractTimeForm(Iterable<User> all, Time time) {
+
+    }
+
+    public SubtractTimeForm() {
+
     }
 
     public int getTimeId() {
@@ -38,9 +43,9 @@ public class SubtractTimeForm {
         return time;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
-    }
+//    public void setTime(Time time) {
+//        this.time = time;
+//    }
 
 
     public int getUserId() {

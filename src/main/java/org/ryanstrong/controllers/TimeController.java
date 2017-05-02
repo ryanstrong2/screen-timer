@@ -63,12 +63,13 @@ public class TimeController {
         timeDao.save(time);
         return "redirect:";
     }
-//    @RequestMapping(value = "subtract", method = RequestMethod.GET)
-//    public String displaySubtractTimeForm(Model model) {
-////        model.addAttribute("times", timeDao.findAll());
-////        model.addAttribute("title", "Subtract Time");
-//        return "/subtract";
-//    }
+    @RequestMapping(value = "subtract", method = RequestMethod.GET)
+    public String displaySubtractTimeForm(Model model) {
+        model.addAttribute("times", timeDao.findAll());
+        model.addAttribute("title", "Subtract Time");
+        model.addAttribute("subtract", new Time());
+        return "/subtract";
+    }
 //        // hard code time options or create array list and set valid amounts
 //        // or in html <option value"30" >30<option>
 //        // enum of values can be used to add or subtract // add daily
@@ -87,9 +88,10 @@ public String addItem(Model model, @PathVariable int userId)
 {
     Time time = timeDao.findOne(userId);
 //    SignUpForm signUpForm= new SignUpForm(userDao.findOne());
-    SubtractTimeForm form = new SubtractTimeForm(
-            userDao.findAll(),
-            time);
+    Time form = new Time(
+//            userDao.findAll(),
+//            time
+    );
     model.addAttribute("title", "Decrease time: " + time.getName());
     model.addAttribute("form", form);
     return "total";
@@ -112,14 +114,17 @@ public String addItem(Model model, @PathVariable int userId)
     }
     @RequestMapping(value = "start", method = RequestMethod.GET)
     public String start(Model model) {
+        model.addAttribute("start", new SubtractTimeForm());
         return "/start";
     }
     @RequestMapping(value = "end", method = RequestMethod.GET)
     public String stop(Model model){
+        model.addAttribute("end", new SubtractTimeForm());
         return "/end";
     }
     @RequestMapping(value = "total", method = RequestMethod.GET)
     public String total(Model model){
+        model.addAttribute("total", new SubtractTimeForm());
         return "/total";
     }
 //    @RequestMapping(value = "start", method = RequestMethod.GET)
