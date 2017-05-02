@@ -5,19 +5,54 @@
 <body>
     <div th:replace="fragments :: page-header"></div>
     <div class="container body-content">
-        <p>Manage time</p>
-        <form th:action="@{/logout}" method="post">
-            <input type ="submit" value="Sign Out"/>
-        </form>
-        <p>Click <a th:href="@{/add}"> here </a> to see a greeting. </p>
+        <!--<p>Manage time</p>-->
+
+        <!--<p>Click <a th:href="@{/add}"> here </a> to see a greeting. </p>-->
         <ul>
             <li th:each="action : ${actions}">
                 <!--<a th:href="@{'/' + ${action.key}}" th:text="${action.value"}></a>-->
             </li>
         </ul>
     </div>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Time</th>
+        </tr>
+        <!--<tr th:each="user: ${users}">-->
+            <!--<td th:text="${user.name}"></td>-->
+            <!--<td th:text="${user.time}"></td>-->
+        <!--</tr>-->
+        <tr th:each="amount:${amounts}">
+            <td th:text="${amount}"></td>
+        </tr>
+    </table>
+    <!--<form method="post" style="max-width:600px;" th:object="${time}">-->
+        <!--<div class="form-group">-->
+            <!--<label th:for="amount">Category Name</label>-->
+            <!--<input class="form-control" th:field="*{amount}" />-->
+            <!--<span th:errors="*{amount}" class="error"></span>-->
+            <!--<input type="submit" value="Enter"/>-->
+        <!--</div>-->
+    <!--</form>-->
+    <form method="post" style="max-width:600px;" th:object="${time}">
+
+        <div class="form-group">
+            <label th:for="type">Amount</label>
+            <select name="timeId">
+                <option th:each="time: ${times}"
+                        th:text="${time.amount}"
+                        th:value="${8}"></option>
+            </select>
+            <input type="submit" value="ADD"/>
+            <input type="submit" value="SUBTRACT"/>
+
+        </div>
+    </form>
 <!--<a href="/time/add">Add Time</a>-->
     <!--<a href="/time/subtract">Subtract Time</a>-->
-
+    <form th:action="@{/logout}" method="post">
+        <input type ="submit" value="Sign Out"/>
+    </form>
 </body>
 </html>

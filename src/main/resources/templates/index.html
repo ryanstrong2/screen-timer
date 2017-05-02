@@ -15,20 +15,32 @@
         <td th:text="${user.name}"></td>
         <td th:text="${user.time}"></td>
     </tr>
+    <tr th:each="amount:${amounts}">
+        <td th:text="${amount}"></td>
+    </tr>
 </table>
 <form method="post" style="max-width:600px;" th:object="${histime}">
-    <div class="form-group">
-        <label th:for="name">Time Amount</label>
-        <input class="form-control" th:field="*{name}" />
-        <span th:errors="*{name}" class="error"></span>
-    </div>
-    <input type="submit" value="Add Time"/>
+<div class="form-group">
+    <label th:for="name">Time Amount</label>
+    <input class="form-control" th:field="*{name}" />
+    <span th:errors="*{name}" class="error"></span>
+</div>
+<input type="submit" value="Add Time"/>
 </form>
 <!--<form th:action="@{/login}" method="post">-->
 <!--<div><label> Five <input type="int" name="five"/> </label></div>-->
 <!--<div><label> Ten <input type="int" name="ten"/> </label></div>-->
 <!--<div><lable> 15 <input type="int" name="fifteen"/></lable></div>-->
 <!--<div><input type="submit" value="Add up"/></div>-->
+    <div class="form-group">
+        <label th:for="type">Amount</label>
+        <select name="timeId">
+            <option th:each="time: ${times}"
+                    th:text="${time.name}"
+                    th:value="${time.id}"></option>
+        </select>
+    </div>
+
 
 <a href="login">Login</a>
 

@@ -1,9 +1,9 @@
 package org.ryanstrong.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 
 /**
@@ -17,16 +17,9 @@ public class Time {
     @GeneratedValue  //annotations
     private int id; //field
 
-    public int getAmount() {
-        return amount;
-    }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
 
-    @NotNull
-//    @Size(min= 1, max=2)
+    @Column(name="amount", columnDefinition = "Number(1) default'5'")
     private int amount; //property instance variable
 //    private final long start;
 
@@ -34,21 +27,22 @@ public class Time {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-//    public int getName() {
-//        return amount;
+//    public void setId(int id) {
+//        this.id = id;
 //    }
 
-
-    public Time() {
-        
+    public Integer getAmount() {
+        return amount;
     }
+    public void setAmount(Integer amount){ this.amount=amount;}
 
+//    public List<User> getUsers(){return users;}
+//    public void setUsers(List<User> users){this.cheeses=cheeses;}
     public void addItem(User theUser) {
     }
+
+
+}
 
 //    public Time(Iterable<User> all, Time time){
 //        start = System.currentTimeMillis();
@@ -71,9 +65,7 @@ public class Time {
 //    }
 //
 //    public void setName(int name) {
-//        this.name = name;
-    }
-
+//        this.name = name;}
 //    public long getStart(){return start;}
 
 //        public List<User> getUsers() {

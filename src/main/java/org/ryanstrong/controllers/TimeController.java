@@ -40,30 +40,30 @@ public class TimeController {
         return "time/index";
     }
 
-    @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayAddtimeForm(Model model) {
+    @RequestMapping(value = "home", method = RequestMethod.GET)
+    public String add(Model model) {
         model.addAttribute("title", "Add time");
         model.addAttribute(new Time());
         model.addAttribute("times", timeDao.findAll());
-        return "time/add";
+        return "/";
     }
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddtimeForm(@ModelAttribute @Valid Time newTime,
+    @RequestMapping(value = "home", method = RequestMethod.POST)
+    public String add(@ModelAttribute @Valid Time time,
                                        Errors errors,
-//                                     @RequestParam int categoryId,
                                      Model model) {
-
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add time");
-            return "time/add";
+            model.addAttribute("Add time");
+            return "/";
         }
 //        Category cat = categoryDao.findOne(categoryId); //category object
 
 //        newtime.setCategory(cat);
-        timeDao.save(newTime);
+        timeDao.save(time);
         return "redirect:";
-    }}
+    }
+
+}
 
 
 //    @RequestMapping(value = "remove", method = RequestMethod.GET)

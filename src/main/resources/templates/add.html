@@ -5,7 +5,7 @@
 <h1 th:text="${title}">Default Title</h1>
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${time} and ${time.size()}">no time</p>
+<!--<p th:unless="${time} and ${time.size()}">no time</p>-->
 <table class="table">
     <tr>
         <th>Name</th>
@@ -16,11 +16,11 @@
         <td th:text="${user.time}"></td>
     </tr>
 </table>
-<form method="post" style="max-width:600px;" th:object="${histime}">
+<form method="post" style="max-width:600px;" th:object="${time}">
     <div class="form-group">
-        <label th:for="name">Time Amount</label>
-        <input class="form-control" th:field="*{name}" />
-        <span th:errors="*{name}" class="error"></span>
+        <label th:for="amount">Time Amount</label>
+        <input class="form-control" th:field="*{amount}" />
+        <span th:errors="*{amount}" class="error"></span>
     </div>
     <input type="submit" value="Add Time"/>
 </form>

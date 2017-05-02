@@ -11,6 +11,7 @@
         <input class="form-control" th:field="*{amount}" />
         <span th:errors="*{amount}" class="error"></span>
     </div>
+    <input type="submit" value="Add time" />
 </form>
 <table class="table">
     <tr>
@@ -20,7 +21,7 @@
         <td th:text="${time.amount}"></td>
     </tr>
 </table>
-<input type="submit" value="Add time" />
+
 <!--<div class="container body-content">-->
     <!--<h1 th:text="${#strings.capitalizeWords(title)}"></h1>-->
     <!--<p> Good news, you have more time!</p>-->
