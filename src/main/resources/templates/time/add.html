@@ -5,9 +5,25 @@
 </head>
 <body>
 <div th:replace="fragments :: page-header"></div>
-<div class="container body-content">
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-    <p> Good news, you have more time!</p>
-</div>
+<form method="post" style="max-width :300px;" th:object="${time}">
+    <div class="form-group">
+        <label th:for="amount">Amount</label>
+        <input class="form-control" th:field="*{amount}" />
+        <span th:errors="*{amount}" class="error"></span>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>Amount</th>
+    </tr>
+    <tr th:each="time:${times}">
+        <td th:text="${time.amount}"></td>
+    </tr>
+</table>
+<input type="submit" value="Add time" />
+<!--<div class="container body-content">-->
+    <!--<h1 th:text="${#strings.capitalizeWords(title)}"></h1>-->
+    <!--<p> Good news, you have more time!</p>-->
+<!--</div>-->
 </body>
 </html>

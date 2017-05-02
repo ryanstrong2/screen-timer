@@ -7,7 +7,14 @@
 <div th:replace="fragments :: page-header"></div>
 <div class="container body-content">
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-
+    <table class="table">
+        <tr>
+            <th>Amount</th>
+        </tr>
+        <tr th:each="time:${times}">
+            <td th:text="${time.amount}"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

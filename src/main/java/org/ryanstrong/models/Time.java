@@ -17,9 +17,17 @@ public class Time {
     @GeneratedValue  //annotations
     private int id; //field
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     @NotNull
 //    @Size(min= 1, max=2)
-    private int name; //property instance variable
+    private int amount; //property instance variable
 //    private final long start;
 
     public int getId() {
@@ -30,13 +38,10 @@ public class Time {
         this.id = id;
     }
 
-    public int getName() {
-        return name;
-    }
+//    public int getName() {
+//        return amount;
+//    }
 
-    public void setName(int name) {
-        this.name = name;
-    }
 
     public Time() {
         
