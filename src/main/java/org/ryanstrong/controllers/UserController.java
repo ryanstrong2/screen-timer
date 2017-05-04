@@ -16,7 +16,7 @@ import javax.validation.Valid;
  * Created by ryanstrong on 4/20/17.
  */
 @Controller
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -28,26 +28,27 @@ public class UserController {
     @RequestMapping(value="")
     public String index(Model model){
         model.addAttribute("users", userDao.findAll());
-        model.addAttribute("userName", "The Users");
+        model.addAttribute("title", "The Users");
     return "user/index";
     }
 
-    @RequestMapping (value ="add", method= RequestMethod.GET )
+    @RequestMapping (value ="/add", method= RequestMethod.GET )
     public String display(Model model){
-        model.addAttribute("userName", "Add user");
+        model.addAttribute("title", "Add user");
+        model.addAttribute( new User());
 //        model.addAttribute(new User());
 //        model.addAttribute("times", timeDao.findAll());
         return "user/add";
     }
-    @RequestMapping(value="add", method = RequestMethod.POST)
-    public String add(@ModelAttribute @Valid User user,
+    @RequestMapping(value="/add", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute @Valid User user,
                       Errors errors, Model model){
         if (errors.hasErrors()) {
             model.addAttribute("Add User");
             return "user/add";
         }
         userDao.save(user);
-        return "redirect:";
+        return "redirect:/";
 //    @RequestMapping (value="login", method = RequestMethod.POST)
 //    public String loginForm (Model model){
 //        model.addAttribute("userName", "Add user");

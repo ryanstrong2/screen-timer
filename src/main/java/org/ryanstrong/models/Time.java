@@ -11,13 +11,9 @@ import javax.persistence.Id;
  */
 @Entity
 public class Time {
-
-
     @Id
     @GeneratedValue  //annotations
     private int id; //field
-
-
 
     @Column(name="amount", columnDefinition = "Number(1) default'5'")
     private int amount; //property instance variable

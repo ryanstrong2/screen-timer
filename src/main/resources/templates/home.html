@@ -6,49 +6,43 @@
     <div th:replace="fragments :: page-header"></div>
     <div class="container body-content">
         <!--<p>Manage time</p>-->
-
         <!--<p>Click <a th:href="@{/add}"> here </a> to see a greeting. </p>-->
-        <ul>
-            <li th:each="action : ${actions}">
-                <!--<a th:href="@{'/' + ${action.key}}" th:text="${action.value"}></a>-->
-            </li>
-        </ul>
     </div>
     <table class="table">
-        <tr>
+        <p>
             <th>Name</th>
             <th>Time</th>
-        </tr>
+        </p>
         <!--<tr th:each="user: ${users}">-->
             <!--<td th:text="${user.name}"></td>-->
             <!--<td th:text="${user.time}"></td>-->
         <!--</tr>-->
         <tr th:each="amount:${amounts}">
-            <td th:text="${amount}"></td>
+            <li th:text="${time.amount}"></li>
         </tr>
     </table>
-    <!--<form method="post" style="max-width:600px;" th:object="${time}">-->
+    <form method="post" style="max-width:600px;" th:object="${time}">
+        <div class="form-group">
+            <label th:for="amount">Category Name</label>
+            <input class="form-control" th:field="*{amount}" />
+            <span th:errors="*{amount}" class="error"></span>
+        </div>
+        <input type="submit" value="Enter"/>
+    </form>
+    <!--<form method="post" >-->
+          <!--&lt;!&ndash;style="max-width:600px;" th:object="${time}"&ndash;&gt;-->
         <!--<div class="form-group">-->
-            <!--<label th:for="amount">Category Name</label>-->
-            <!--<input class="form-control" th:field="*{amount}" />-->
-            <!--<span th:errors="*{amount}" class="error"></span>-->
-            <!--<input type="submit" value="Enter"/>-->
+            <!--<label th:for="amount">Amount</label>-->
+            <!--<select name="timeId">-->
+                <!--<option th:each="amount: ${amounts}"-->
+                        <!--th:text="${time.amount}"-->
+                        <!--th:value="${time}"></option>-->
+            <!--</select>-->
+            <!--<input type="submit" value="ADD"/>-->
+            <!--<input type="submit" value="SUBTRACT"/>-->
+
         <!--</div>-->
     <!--</form>-->
-    <form method="post" style="max-width:600px;" th:object="${time}">
-
-        <div class="form-group">
-            <label th:for="type">Amount</label>
-            <select name="timeId">
-                <option th:each="time: ${times}"
-                        th:text="${time.amount}"
-                        th:value="${8}"></option>
-            </select>
-            <input type="submit" value="ADD"/>
-            <input type="submit" value="SUBTRACT"/>
-
-        </div>
-    </form>
 <!--<a href="/time/add">Add Time</a>-->
     <!--<a href="/time/subtract">Subtract Time</a>-->
     <form th:action="@{/logout}" method="post">

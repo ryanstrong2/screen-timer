@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<!--<nav th:replace="fragments :: page-header"></nav>-->
+
+<form method="post" style="max-width:600px;" th:object="${minute}">
+    <div class="form-group">
+        <label th:for="name">Minutes</label>
+        <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Time" />
+</form>
+<div th:each="minute:${minutes}">
+    <p>
+    <input type="hidden" name="minuteId" th:value="*{id}"  class="minuteId"/>
+    <input type="button" name="minus" class="minus" value="-" autocomplete="off" />
+    <input type="text" name="quantity" value="1" class="result" autocomplete="off" th:value="*{quantity}" />
+    <input type="button" name="plus" class="plus" autocomplete="off" value="+" />
+    </p>
+    <div th:with="result=${obj.baseRetailPrice * obj.aa}">
+        <span th:text="${result}">1</span>
+    </div>
+</div>
+<p>time available <span th:field="${result}">b</span> </p>
+<!--<form method="post">-->
+
+    <!--<div th:each="minute : ${minutes}" class="checkbox">-->
+        <!--<input type="checkbox" name="minuteIds" th:value="${minute.id}" th:id="${minute.id}"/>-->
+        <!--<label th:for="${minute.id}" th:text="${minute.name}"></label>-->
+        <!--<br />-->
+    <!--</div>-->
+
+    <!--<input type="submit" value="Reduce Time" />-->
+<!--</form>-->
+
+</body>
+</html>

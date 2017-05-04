@@ -16,28 +16,18 @@ import javax.validation.Valid;
  * Created by ryanstrong on 5/1/17.
  */
 @Controller
-@RequestMapping("time")
+@RequestMapping("home")
 public class TimeController {
-
-
-
-
-
     @Autowired
     private TimeDao timeDao;
 
-//    @Autowired
-//    private CategoryDao categoryDao;
-
-//    @ManyToOne
-//    private Category category;
     @RequestMapping(value = "")
     public String index(Model model) {
 
         model.addAttribute("times", timeDao.findAll());
         model.addAttribute("title", "My times");
 
-        return "time/index";
+        return "home";
     }
 
     @RequestMapping(value = "home", method = RequestMethod.GET)
@@ -56,7 +46,7 @@ public class TimeController {
             model.addAttribute("Add time");
             return "/";
         }
-//        Category cat = categoryDao.findOne(categoryId); //category object
+//        CategoryController cat = categoryDao.findOne(categoryId); //minute object
 
 //        newtime.setCategory(cat);
         timeDao.save(time);
